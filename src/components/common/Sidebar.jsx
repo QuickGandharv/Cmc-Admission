@@ -21,12 +21,12 @@ import Joyride, { EVENTS } from "react-joyride";
 
 const steps = [
   {
-    target: "body",
+    target: "#admin-dashboard",
     content: "welcome to the Dashboard",
     placement: "center",
     data: {
       next: "/admin/users",
-      previous: "/",
+      previous: "/admin",
     },
   },
   {
@@ -34,7 +34,7 @@ const steps = [
     content: "clikc on the user user tab and see users list",
     data: {
       next: "/admin/users",
-      previous: "/",
+      previous: "/admin",
     },
   },
   {
@@ -42,7 +42,7 @@ const steps = [
     content: "this is the users list page",
     data: {
       next: "/admin/users",
-      previous: "/",
+      previous: "/admin",
     },
   },
   {
@@ -89,7 +89,7 @@ const steps = [
     target: "#roles-permission",
     content: "Roles And Permissions",
     data: {
-      next: "/",
+      next: "/admin",
       previous: "/admin/pg-form-settings",
     },
   },
@@ -142,6 +142,46 @@ const Sidebar = () => {
     }
   };
 
+  const CustomTooltip = ({
+    step,
+    index,
+    totalSteps,
+    backProps,
+    primaryProps,
+  }) => {
+    const progress = ((index + 1) / totalSteps) * 100; // Calculate progress
+
+    return (
+      <div className="bg-white-default text-center p-4 rounded-lg shadow-lg w-80">
+        {/* Progress Bar */}
+        <div className="w-full bg-white-default h-2 rounded-full mb-2">
+          <div
+            className="bg-blue-500 h-2 rounded-full"
+            style={{ width: `${progress}%` }}
+          ></div>
+        </div>
+
+        {/* Tooltip Content */}
+        <p className="text-black-default">{step.content}</p>
+
+        {/* Navigation Buttons */}
+        <div className="flex justify-center mt-4">
+          {/* {index > 0 && (
+            <button {...backProps} className="px-4 py-2 bg-gray-300 rounded">
+              Back
+            </button>
+          )} */}
+          <button
+            {...primaryProps}
+            className="px-4 py-2 bg-blue-500 text-white rounded"
+          >
+            {index === totalSteps - 1 ? "Finish" : "Next"}
+          </button>
+        </div>
+      </div>
+    );
+  };
+
   return (
     <aside className="max-w-[252px] w-full bg-primary-default shadow-side-Shadow overflow-auto">
       <Joyride
@@ -151,9 +191,27 @@ const Sidebar = () => {
         continuous // Allow the tour to continue without stopping
         disableOverlayClose // Prevent closing the tour by clicking the overlay
         callback={handleJoyrideCallback} // Handle tour events
-        showSkipButton // Show a skip button
+        // showSkipButton // Show a skip button
         showProgress // Show progress in the tour
         hideCloseButton // Hide the close button
+        hideBackButton
+        tooltipComponent={(props) => (
+          <CustomTooltip {...props} totalSteps={steps.length} />
+        )}
+        // styles={{
+        //   options: {
+        //     zIndex: 10000,
+        //   },
+        //   spotlight: {
+        //     borderRadius: "10px", // Rounded corners for highlight
+        //     boxShadow: "0 0 10px rgba(0, 150, 255, 0.8)", // Blue glow effect
+        //     backgroundColor: "rgba(0, 150, 255, 0.2)", // Light blue tint
+        //   },
+        //   overlay: {
+        //     backgroundColor: "rgba(0, 0, 0, 0.6)", // Darken rest of the page
+        //     // backdropFilter: "blur(1px)", // Blur effect
+        //   },
+        // }}
       />
       <div className="p-5">
         <img
@@ -166,7 +224,7 @@ const Sidebar = () => {
         <Badge text="Main" />
         <ul>
           <li>
-            <SideNavLink href="/" text="Dashboards" icon={<FaHome />} />
+            <SideNavLink href="/admin" text="Dashboards" icon={<FaHome />} />
           </li>
           <li>
             <SideNavLink

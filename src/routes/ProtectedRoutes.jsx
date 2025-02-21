@@ -1,5 +1,11 @@
-import { lazy, Suspense } from "react";
-import { Route, Routes, Navigate, useLocation } from "react-router-dom";
+import { lazy, Suspense, useEffect } from "react";
+import {
+  Route,
+  Routes,
+  Navigate,
+  useLocation,
+  replace,
+} from "react-router-dom";
 import { useContext } from "react";
 import { UserContext } from "../context/UserContext";
 import PgForm from "../pages/dashboard/Pg-form/PgFormSetting.jsx";
@@ -50,7 +56,7 @@ const ProtectedRoutes = () => {
   return (
     <Suspense fallback={<div>Loading....</div>}>
       <Routes>
-        <Route path="/" element={<Dashboard />} />
+        <Route path="/admin" element={<Dashboard />} />
         <Route path="/admin/users" element={<Users />} />
         <Route path="/admin/applications" element={<Applications />} />
         <Route

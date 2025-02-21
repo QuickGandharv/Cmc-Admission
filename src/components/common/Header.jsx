@@ -15,7 +15,7 @@ const Header = () => {
     <header className="bg-white-defaultw-full h-fit bg-white-default">
       <div className="flex flex-wrap justify-between items-center py-4 px-5">
         <div className="left-header">
-          <Title title="Admin Dashboard" />
+          <Title id="admin-dashboard" title="Admin Dashboard" />
           <div className="flex flex-wrap items-center text-black-300">
             <Breadcrumb text="Dashboard" />
           </div>
