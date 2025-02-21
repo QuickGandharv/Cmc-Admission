@@ -3,7 +3,7 @@ import SelectField from "../../components/forms/SelectField";
 import Button from "../../components/ui/Button";
 import { useForm } from "react-hook-form";
 import Title from "../../components/ui/Title";
-import ToggleButton from "../../components/ui/toggle-button";
+import ToggleButton from "../../components/ui/ToggleButton";
 
 const BiblePersonalInformation = () => {
   const { control } = useForm({
