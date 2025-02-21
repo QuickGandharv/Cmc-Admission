@@ -4,10 +4,6 @@ import ProtectedRoutes from "./ProtectedRoutes";
 import MainLayout from "../layout/MainLayout";
 import Maintenance from "../pages/maintenance-mode";
 
-const Login = lazy(() => import("../pages/auth/Login"));
-const Forgetpassword = lazy(() => import("../pages/auth/Forgetpassword"));
-const VerifyOtp = lazy(() => import("../pages/auth/VerifyOtp"));
-const ResetPassword = lazy(() => import("../pages/auth/ResetPassword"));
 const RegistrationForm = lazy(() =>
   import("../pages/admission/registration-form/index")
 );
@@ -21,12 +17,6 @@ const AppRoutes = () => {
       future={{ v7_startTransition: true, v7_relativeSplatPath: true }}
     >
       <Routes>
-        {/* pages wihtout header, footer and sidebar */}
-        <Route path="/login" element={<Login />} />
-        <Route path="/forget-password" element={<Forgetpassword />} />
-        <Route path="/verify-otp" element={<VerifyOtp />} />
-        <Route path="/reset-password" element={<ResetPassword />} />
-
         {/* pages with header, footer and sidebar */}
         <Route element={<MainLayout />}>
           <Route path="/*" element={<ProtectedRoutes />} />
