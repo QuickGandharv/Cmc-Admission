@@ -293,7 +293,10 @@ const BiblePersonalInformation = () => {
       <div className="mb-8">
         <div className="flex items-center gap-10 mb-8">
           <Title title="COURSE" classname="flex-[0_0_10%]" />
-          <Title title="CATEGORY THE CANDIDATE IS APPLYING ON" classname="flex-[0_0_90%]" />
+          <Title
+            title="CATEGORY THE CANDIDATE IS APPLYING ON"
+            classname="flex-[0_0_90%]"
+          />
         </div>
         <div className="flex items-center gap-10 mb-5">
           <div className="flex flex-[0_0_10%]">
@@ -302,13 +305,13 @@ const BiblePersonalInformation = () => {
             </label>
           </div>
           <div className="flex gap-10">
-          <ToggleButton text="2B" id="bds2B" />
-          <ToggleButton text="2B" id="BDS2B" />
-          <ToggleButton text="2C" id="BDS2C" />
-          <ToggleButton text="2D" id="BDS2D" />
-          <ToggleButton text="2E" id="BDS2E" />
-          <ToggleButton text="2F" id="BDS2F" />
-          <ToggleButton text="2G" id="BDS2G" />
+            <ToggleButton text="2B" id="bds2B" />
+            <ToggleButton text="2B" id="BDS2B" />
+            <ToggleButton text="2C" id="BDS2C" />
+            <ToggleButton text="2D" id="BDS2D" />
+            <ToggleButton text="2E" id="BDS2E" />
+            <ToggleButton text="2F" id="BDS2F" />
+            <ToggleButton text="2G" id="BDS2G" />
           </div>
         </div>
         <div className="flex items-center gap-10">
@@ -318,13 +321,13 @@ const BiblePersonalInformation = () => {
             </label>
           </div>
           <div className="flex gap-10">
-          <ToggleButton text="2B" id="mbbs2B" />
-          <ToggleButton text="2B" id="MBBS2B" />
-          <ToggleButton text="2C" id="MBBS2C" />
-          <ToggleButton text="2D" id="MBBS2D" />
-          <ToggleButton text="2E" id="MBBS2E" />
-          <ToggleButton text="2F" id="MBBS2F" />
-          <ToggleButton text="2G" id="MBBS2G" />
+            <ToggleButton text="2B" id="mbbs2B" />
+            <ToggleButton text="2B" id="MBBS2B" />
+            <ToggleButton text="2C" id="MBBS2C" />
+            <ToggleButton text="2D" id="MBBS2D" />
+            <ToggleButton text="2E" id="MBBS2E" />
+            <ToggleButton text="2F" id="MBBS2F" />
+            <ToggleButton text="2G" id="MBBS2G" />
           </div>
         </div>
       </div>
@@ -332,12 +335,31 @@ const BiblePersonalInformation = () => {
         <Title title="Foot Note : State of Domicile" classname="mb-2.5" />
         <div className="">
           <p className="text-black-300 font-normal mb-5">A - Punjab ;</p>
-          <p className="text-black-300 font-normal mb-5">B - Andhra Pradesh, Karnataka, Kerala, Puducherry, Tamil Nadu, Telengana;</p>
-          <p className="text-black-300 font-normal mb-5">C - Goa, Maharashtra, Gujarat, Daman & Diu, Dadra & Nagar Haveli, Rajasthan, Lakshadweep;</p>
-          <p className="text-black-300 font-normal mb-5">D - Madhya Pradesh, Chhatisgarh, Orissa, Jharkhand, West Bengal, Andaman & Nicobar Islands;</p>
-          <p className="text-black-300 font-normal mb-5">E - Uttar Pradesh, Bihar, Uttarakhand, Arunachal Pradesh, Assam, Meghalaya, Manipur, Mizoram, Nagaland, Sikkim, Tripura ;</p>
-          <p className="text-black-300 font-normal mb-5">F - Jammu & Kashmir, Ladakh, Himachal Pradesh, Delhi, Haryana, Chandigarh;</p>
-          <p className="text-black-300 font-normal">G – Service Commitment with CMC Ludhiana & Its Outreach Centers. Candidates applying in the 2G category should have their forms endorsed by the Director, Christian Medical College Ludhiana</p>
+          <p className="text-black-300 font-normal mb-5">
+            B - Andhra Pradesh, Karnataka, Kerala, Puducherry, Tamil Nadu,
+            Telengana;
+          </p>
+          <p className="text-black-300 font-normal mb-5">
+            C - Goa, Maharashtra, Gujarat, Daman & Diu, Dadra & Nagar Haveli,
+            Rajasthan, Lakshadweep;
+          </p>
+          <p className="text-black-300 font-normal mb-5">
+            D - Madhya Pradesh, Chhatisgarh, Orissa, Jharkhand, West Bengal,
+            Andaman & Nicobar Islands;
+          </p>
+          <p className="text-black-300 font-normal mb-5">
+            E - Uttar Pradesh, Bihar, Uttarakhand, Arunachal Pradesh, Assam,
+            Meghalaya, Manipur, Mizoram, Nagaland, Sikkim, Tripura ;
+          </p>
+          <p className="text-black-300 font-normal mb-5">
+            F - Jammu & Kashmir, Ladakh, Himachal Pradesh, Delhi, Haryana,
+            Chandigarh;
+          </p>
+          <p className="text-black-300 font-normal">
+            G – Service Commitment with CMC Ludhiana & Its Outreach Centers.
+            Candidates applying in the 2G category should have their forms
+            endorsed by the Director, Christian Medical College Ludhiana
+          </p>
         </div>
       </div>
       <div className="text-right mt-5">
