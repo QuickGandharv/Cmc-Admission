@@ -1,6 +1,6 @@
 import Button from "../../../components/ui/Button";
 import OutlineButton from "../../../components/ui/OutlineButton";
-import FileFeild from "../../../components/forms/filefeild";
+import FileFeild from "../../../components/forms/FileFeild";
 
 const Document = () => {
   return (
