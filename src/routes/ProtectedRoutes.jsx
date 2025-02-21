@@ -41,9 +41,9 @@ const ProtectedRoutes = () => {
   var { userData } = useContext(UserContext);
   const location = useLocation();
 
-  if (!userData?.token) {
-    return <Navigate to="/login" replace />;
-  }
+  // if (!userData?.token) {
+  //   return <Navigate to="/login" replace />;
+  // }
 
   const isSuperAdmin = userData?.role === "super-admin";
 
