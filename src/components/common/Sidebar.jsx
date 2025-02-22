@@ -8,7 +8,7 @@ import { GrSystem } from "react-icons/gr"; // States
 import { useContext, useEffect, useState } from "react";
 import { UserContext } from "../../context/UserContext";
 import useAxios from "../../hooks/UseAxios";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import {
   FaChartBar,
   FaFileAlt,
@@ -151,6 +151,18 @@ const Sidebar = () => {
     }
   }, [navigate]);
 
+  // const location = useLocation();
+
+  // useEffect(() => {
+  //   const navigationType =
+  //     window.performance.getEntriesByType("navigation")[0]?.type;
+
+  //   // Redirect to /admin if the page was refreshed and it's not already on /admin
+  //   if (navigationType === "reload" && location.pathname !== "/admin") {
+  //     navigate("/admin", { replace: true });
+  //   }
+  // }, [navigate, location.pathname]);
+
   const CustomTooltip = ({
     step,
     index,
@@ -166,19 +178,19 @@ const Sidebar = () => {
         {/* Progress Bar */}
         <div className="w-full bg-white-default h-2 rounded-full mb-2">
           <div
-            className="bg-blue-500 h-2 rounded-full"
+            className="bg-primary-default h-2 rounded-full"
             style={{ width: `${progress}%` }}
           ></div>
         </div>
 
         {/* Tooltip Content */}
-        <p className="text-black-default">{step.content}</p>
+        <p className="text-black-default text-lg">{step.content}</p>
 
         {/* Navigation Buttons */}
         <div className="flex justify-center mt-4">
           <button
             {...primaryProps}
-            className="px-4 py-2 bg-blue-500 text-white rounded"
+            className="px-4 py-2 bg-primary-default text-white rounded"
           >
             {index === totalSteps - 1 ? "Finish" : "Next"}
           </button>
