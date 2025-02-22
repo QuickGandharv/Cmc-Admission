@@ -5,7 +5,7 @@ import { LuFiles } from "react-icons/lu"; // Pages
 import { LiaToolsSolid } from "react-icons/lia"; // Maintenance icon
 import { RiListCheck3, RiListSettingsLine } from "react-icons/ri"; // Change Password
 import { GrSystem } from "react-icons/gr"; // States
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { UserContext } from "../../context/UserContext";
 import useAxios from "../../hooks/UseAxios";
 import { useNavigate } from "react-router-dom";
@@ -142,6 +142,15 @@ const Sidebar = () => {
     }
   };
 
+  useEffect(() => {
+    const hasRedirected = localStorage.getItem("hasRedirected");
+
+    if (!hasRedirected) {
+      localStorage.setItem("hasRedirected", "true"); // Set flag in localStorage
+      navigate("/admin"); // Redirect only if it hasn't redirected before
+    }
+  }, [navigate]);
+
   const CustomTooltip = ({
     step,
     index,
@@ -150,6 +159,7 @@ const Sidebar = () => {
     primaryProps,
   }) => {
     const progress = ((index + 1) / totalSteps) * 100; // Calculate progress
+    console.log("step + content :", step.content);
 
     return (
       <div className="bg-white-default text-center p-4 rounded-lg shadow-lg w-80">
@@ -166,11 +176,6 @@ const Sidebar = () => {
 
         {/* Navigation Buttons */}
         <div className="flex justify-center mt-4">
-          {/* {index > 0 && (
-            <button {...backProps} className="px-4 py-2 bg-gray-300 rounded">
-              Back
-            </button>
-          )} */}
           <button
             {...primaryProps}
             className="px-4 py-2 bg-blue-500 text-white rounded"
